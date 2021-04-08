@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBeer, } from 'react-icons/fa';
+import firebase from "firebase/app";
+import "firebase/auth";
+import firebaseConfig from './firebase.config';
+
+
+firebase.initializeApp(firebaseConfig);
+
 
 const Login = () => {
+
+  const [user, setUser] = useState({});
+
+  var provider = new firebase.auth.GoogleAuthProvider();
+  const handleGoogleSignIN = () =>{
+    firebase.auth()
+    .signInWithPopup(provider)
+    .then((result) => {
+      var user = result.user;
+      setUser(user);
+    }).catch((error) => {
+      console.log(error)
+    });
+  }
+
     return (
         <div className="d-flex justify-content-center mt-5   ">
            <div className="border shadow">
@@ -20,11 +41,13 @@ const Login = () => {
           <Link to="/destination">
             <button  className="btn-primary text-center" type="submit">Submit</button>
             <br/>
-            <button className="btn-primary mt-1"> Sign in with google</button>
+            <button className="btn-primary mt-1" onClick={handleGoogleSignIN}> Sign in with google</button>
           </Link>
           </div>
-
         </form>
+           </div>
+           <div>
+             <h4>Logged in by: {user.email}</h4>
            </div>
         </div>
     );

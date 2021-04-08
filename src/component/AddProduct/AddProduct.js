@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import Admin from '../Admin/Admin';
 
 const AddProduct = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const [imageURL, setImageURL] = useState(null)
 
     const onSubmit = data => {
@@ -44,13 +44,13 @@ const AddProduct = () => {
 
     return (
         
-        <div>
+        <div style={{backgroundColor:'grey', maxWidth:"60rem", borderRadius:"10px", marginLeft:"10rem"}}>
             <div>
                 <Admin></Admin>
             </div>
             <div className="d-flex justify-content-center mt-5  ">
             <div style={{ maxWidth: "15rem", }} className="text-center border border-5 shadow ">
-                <div>
+                <div style={{backgroundColor:"lightgrey",}}>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="mb-3">

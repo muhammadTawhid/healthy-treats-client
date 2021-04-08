@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AddProduct from '../AddProduct/AddProduct';
+
 
 const Admin = () => {
     return (
-        <div style={{maxWidth:"18rem", marginTop:"20px"}}>
+        <div>
+            <div  style={{maxWidth:"13rem", marginTop:"10rem", marginLeft:"10rem", backgroundColor:"lightgrey",borderRadius:"10px"}}>
             <ul>
         <li>
           <Link to="addProducts">Add Product</Link>
@@ -17,10 +18,9 @@ const Admin = () => {
         </li>
       </ul>
       <hr/>
-       <div>
-          <AddProduct></AddProduct>
-       </div>
-      
+            </div>
+           
+        
         </div>
     );
 };
