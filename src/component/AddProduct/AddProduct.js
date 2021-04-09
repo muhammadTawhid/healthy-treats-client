@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import Admin from '../Admin/Admin';
+import Header from '../Header/Header';
 
 const AddProduct = () => {
     const { register, handleSubmit } = useForm();
@@ -44,11 +45,15 @@ const AddProduct = () => {
 
     return (
         
-        <div style={{backgroundColor:'grey', maxWidth:"60rem", borderRadius:"10px", marginLeft:"10rem"}}>
+        <div>
+            <div>
+                <Header></Header>
+            </div>
+            <div style={{backgroundColor:'grey', maxWidth:"60rem", borderRadius:"10px", marginLeft:"10rem"}}>
             <div>
                 <Admin></Admin>
             </div>
-            <div className="d-flex justify-content-center mt-5  ">
+            <div className="d-flex justify-content-center ">
             <div style={{ maxWidth: "15rem", }} className="text-center border border-5 shadow ">
                 <div style={{backgroundColor:"lightgrey",}}>
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -69,6 +74,7 @@ const AddProduct = () => {
                     </form>
                 </div>
             </div>
+        </div>
         </div>
         </div>
         

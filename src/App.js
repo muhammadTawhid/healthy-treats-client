@@ -6,6 +6,7 @@ import {
 import './App.css';
 import AddProduct from "./component/AddProduct/AddProduct";
 import Admin from "./component/Admin/Admin";
+import EditProduct from "./component/EditProduct/EditProduct";
 import Home from './component/Home.js/Home';
 import Login from "./component/Login/Login";
 import ManageProduct from "./component/Manage Product/ManageProduct";
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route path="/manageProducts">
             <ManageProduct/>
+          </Route>
+          <Route path="/editProducts">
+            <EditProduct/>
           </Route>
         </Switch>
     </Router>

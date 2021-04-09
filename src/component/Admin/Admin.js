@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../Header/Header';
+import ManageProduct from '../Manage Product/ManageProduct';
 
 
 const Admin = () => {
+
+//     const [products, setProduct] = useState([]);
+
+//   useEffect(() => {
+//     fetch('http://localhost:5000/products')
+//       .then(res => res.json())
+//       .then(data => setProduct(data))
+//   }, [])
+
     return (
         <div>
             <div  style={{maxWidth:"13rem", marginTop:"10rem", marginLeft:"10rem", backgroundColor:"lightgrey",borderRadius:"10px"}}>
@@ -20,7 +31,11 @@ const Admin = () => {
       <hr/>
             </div>
            
-        
+            {/* <div>
+        {
+          products.map(product => <ManageProduct  product={product}></ManageProduct> )
+        }
+      </div> */}
         </div>
     );
 };

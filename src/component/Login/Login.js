@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
+import Header from '../Header/Header';
 
 
 firebase.initializeApp(firebaseConfig);
@@ -25,8 +26,10 @@ const Login = () => {
   }
 
     return (
-        <div className="d-flex justify-content-center mt-5   ">
-           <div className="border shadow">
+        <div>
+          <Header></Header>
+          <div className="d-flex justify-content-center mt-5   ">
+           <div className=" shadow">
            <form style={{ maxWidth: "300px" }} >
          <input className="form-control" type="text"  name="name" placeholder="Your Name" required />
           <br />
@@ -38,7 +41,7 @@ const Login = () => {
           <label htmlFor="switchForm"> Create new account</label>
           <br />
           <div className="text-center">
-          <Link to="/destination">
+          <Link to="/login">
             <button  className="btn-primary text-center" type="submit">Submit</button>
             <br/>
             <button className="btn-primary mt-1" onClick={handleGoogleSignIN}> Sign in with google</button>
@@ -46,7 +49,8 @@ const Login = () => {
           </div>
         </form>
            </div>
-           <div>
+        </div>
+        <div className="text-center mt-3">
              <h4>Logged in by: {user.email}</h4>
            </div>
         </div>
@@ -54,3 +58,5 @@ const Login = () => {
 };
 
 export default Login;
+
+

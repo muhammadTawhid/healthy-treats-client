@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
+import ManageProduct from '../Manage Product/ManageProduct';
 import Product from '../Product/Product';
 
 const Home = () => {
@@ -15,11 +16,24 @@ const Home = () => {
   return (
     <div>
       <Header></Header>
-      <div  className="row mt-5  ">
+      <div className="text-center mt-5">
         {
-          products.map(product => <Product  product={product}></Product>)
+          products.length === 0 && <div className="spinner-border " role="status">
+          </div>
         }
       </div>
+      <div className="row mt-5  ">
+
+        {
+          products.map(product => <Product product={product}></Product>)
+        }
+      </div>
+      {/* <div>
+        {
+          products.map(product => <ManageProduct  product={product}></ManageProduct> )
+        }
+      </div> */}
+
     </div>
   );
 };
