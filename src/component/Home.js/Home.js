@@ -28,11 +28,7 @@ const Home = () => {
           products.map(product => <Product product={product}></Product>)
         }
       </div>
-      {/* <div>
-        {
-          products.map(product => <ManageProduct  product={product}></ManageProduct> )
-        }
-      </div> */}
+      
 
     </div>
   );

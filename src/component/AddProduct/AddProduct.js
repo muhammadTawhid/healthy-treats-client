@@ -49,8 +49,8 @@ const AddProduct = () => {
             <div>
                 <Header></Header>
             </div>
-            <div style={{backgroundColor:'grey', maxWidth:"60rem", borderRadius:"10px", marginLeft:"10rem"}}>
-            <div>
+            <div style={{backgroundColor:'grey', maxWidth:"40rem", borderRadius:"10px", marginLeft:"20rem", marginTop:"10rem", display:"flex"}}>
+            <div style={{marginRight:"3rem"}}>
                 <Admin></Admin>
             </div>
             <div className="d-flex justify-content-center ">
