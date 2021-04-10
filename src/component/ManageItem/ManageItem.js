@@ -5,14 +5,14 @@ const ManageItem = ({ product }) => {
 
     const deleteEvent = id => {
         console.log(id)
-        fetch(`http://localhost:5000/delete/${id}`, {
-            method:'DELETE',
-            
+        fetch(`https://damp-ridge-81552.herokuapp.com/delete/${id}`, {
+            method: 'DELETE',
+
         })
-        .then(res => res.json())
-        .then(result => {
-            console.log('deleted successfully')
-        })
+            .then(res => res.json())
+            .then(result => {
+                console.log('deleted successfully')
+            })
     }
 
     return (
@@ -34,20 +34,6 @@ const ManageItem = ({ product }) => {
 };
 
 export default ManageItem;
-
-
-{/* <table className="table justify-content-between">
-
-<tbody >
-    <tr >
-        <th scope="row"></th>
-        <td >{product.name}</td>
-        <td  >{product.price}</td>
-        <button className="text-center" >Remove</button>
-
-    </tr>
-</tbody>
-</table> */}
 
 
 

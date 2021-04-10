@@ -14,7 +14,7 @@ const AddProduct = () => {
             price: data.price,
             imageURL: imageURL
         }
-        const url = `http://localhost:5000/addProduct`
+        const url = `https://damp-ridge-81552.herokuapp.com/addProduct`
 
         console.log(productData)
 
@@ -44,40 +44,40 @@ const AddProduct = () => {
     }
 
     return (
-        
+
         <div>
             <div>
                 <Header></Header>
             </div>
-            <div style={{backgroundColor:'grey', maxWidth:"40rem", borderRadius:"10px", marginLeft:"20rem", marginTop:"10rem", display:"flex"}}>
-            <div style={{marginRight:"3rem"}}>
-                <Admin></Admin>
-            </div>
-            <div className="d-flex justify-content-center ">
-            <div style={{ maxWidth: "15rem", }} className="text-center border border-5 shadow ">
-                <div style={{backgroundColor:"lightgrey",}}>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+            <div style={{ backgroundColor: 'grey', maxWidth: "40rem", margin: "10rem 10rem", display: "flex" }}>
+                <div style={{ marginRight: "3rem" }}>
+                    <Admin></Admin>
+                </div>
+                <div className="d-flex justify-content-center ">
+                    <div style={{ maxWidth: "15rem", }} className="text-center border border-5 shadow ">
+                        <div style={{ backgroundColor: "lightgrey", }}>
+                            <form onSubmit={handleSubmit(onSubmit)}>
 
-                        <div className="mb-3">
-                            <label for="exampleInputName" className="form-label">Your Product Name</label>
-                            <input defaultValue="" {...register("name")} type="text" className="form-control" id="exampleInputName" placeholder="Name" />
+                                <div className="mb-3">
+                                    <label for="exampleInputName" className="form-label">Your Product Name</label>
+                                    <input defaultValue="" {...register("name")} type="text" className="form-control" id="exampleInputName" placeholder="Name" />
+                                </div>
+                                <div className="mb-3">
+                                    <label for="exampleInputPrice" className="form-label">Your Product Price</label>
+                                    <input defaultValue="" {...register("price")} type="text" className="form-control" id="exampleInputName" placeholder="Price" />
+                                </div>
+                                <div className="mb-3">
+                                    <label for="exampleUploadFile" className="form-label"></label>
+                                    <input type="file" {...register("exampleRequired")} onChange={handleImgUpload} id="exampleInputFile" />
+                                </div>
+                                <button type="submit" className="btn btn-primary">Submit</button>
+                            </form>
                         </div>
-                        <div className="mb-3">
-                            <label for="exampleInputPrice" className="form-label">Your Product Price</label>
-                            <input defaultValue="" {...register("price")} type="text" className="form-control" id="exampleInputName" placeholder="Price" />
-                        </div>
-                        <div className="mb-3">
-                            <label for="exampleUploadFile" className="form-label"></label>
-                            <input type="file" {...register("exampleRequired")} onChange={handleImgUpload} id="exampleInputFile" />
-                        </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
-        </div>
-        
+
     );
 };
 

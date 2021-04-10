@@ -1,3 +1,4 @@
+import { createContext, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,43 +7,50 @@ import {
 import './App.css';
 import AddProduct from "./component/AddProduct/AddProduct";
 import Admin from "./component/Admin/Admin";
+import Deals from "./component/Deals/Deals";
 import EditProduct from "./component/EditProduct/EditProduct";
 import Home from './component/Home.js/Home';
 import Login from "./component/Login/Login";
 import ManageProduct from "./component/Manage Product/ManageProduct";
 import Orders from "./component/Orders/Orders";
+import PrivetRoute from "./component/PrivetRoute/PrivetRoute";
+
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <div  className="">
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
-      
         <Switch>
-        <Route path="/admin">
+        <PrivetRoute path="/admin">
             <Admin />
-          </Route>
+          </PrivetRoute>
           <Route exact path="/">
             <Home />
           </Route>
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/orders">
+          <PrivetRoute path="/orders">
             <Orders/>
-          </Route>
-          <Route path="/addProducts">
+          </PrivetRoute>
+          <PrivetRoute path="/addProducts">
             <AddProduct/>
-          </Route>
-          <Route path="/manageProducts">
+          </PrivetRoute>
+          <PrivetRoute path="/manageProducts">
             <ManageProduct/>
-          </Route>
-          <Route path="/editProducts">
+          </PrivetRoute>
+          <PrivetRoute path="/editProducts">
             <EditProduct/>
+          </PrivetRoute>
+          <Route path="/deals">
+            <Deals/>
           </Route>
         </Switch>
     </Router>
       
-    </div>
+    </UserContext.Provider>
   );
 }
 

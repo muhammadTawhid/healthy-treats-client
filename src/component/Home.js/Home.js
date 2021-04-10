@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
-import ManageProduct from '../Manage Product/ManageProduct';
 import Product from '../Product/Product';
 
 const Home = () => {
 
-  const [products, setProduct] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('https://damp-ridge-81552.herokuapp.com/products')
       .then(res => res.json())
-      .then(data => setProduct(data))
+      .then(data => setProducts(data))
   }, [])
 
   return (
@@ -22,14 +21,12 @@ const Home = () => {
           </div>
         }
       </div>
-      <div className="row mt-5  ">
+      <div className="row my-5">
 
         {
           products.map(product => <Product product={product}></Product>)
         }
       </div>
-      
-
     </div>
   );
 };
